@@ -805,7 +805,7 @@ xclip
 }
 
 
-/*------------------------------------------------------------------
+------------------------------------------------------------------
     TESTIMONIALS
 -------------------------------------------------------------------*/
 
@@ -2468,3 +2468,39 @@ select.mobile-device {
     border-color: rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
 }
+
+.img-button {
+    width: 80vh; /* Sesuaikan ukuran lebar gambar */
+    height: auto;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    margin: 10px; /* Menambahkan sedikit jarak antar gambar */
+}
+
+
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: black; /* Latar belakang hitam */
+  border-radius: 5px; /* Membuat kotak dengan sudut melengkung */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev-icon i,
+.carousel-control-next-icon i {
+  color: white; /* Warna ikon putih */
+  font-size: 20px; /* Ukuran ikon */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #333; /* Latar belakang lebih terang saat di-hover */
+}
+
+
+  
