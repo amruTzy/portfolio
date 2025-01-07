@@ -141,9 +141,10 @@
 			<div class="section-title text-left">
                 <h3>Tugas</h3>
                 <p>Berikut adalah tugas-tugas yang saya telah kerjakan.</p>
+                <input type="text" id="searchInput" placeholder="Cari tugas..." onkeyup="filterTasks()">
             </div><!-- end title -->
 			
-			<div class="gallery-list row">
+			<div class="gallery-list row" id="taskGallery">
 				<div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
 					<div class="gallery-single fix">
 						<a href="form login/index.html" target="_blank">
@@ -222,9 +223,9 @@
 							</div>
 						</a>
 					</div>
-
 			</div>
-				<div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
+
+      <div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
         <div class="gallery-single fix">
           <a href="Laporan Penjualan/index.html" target="_blank">
             <div class="image-wrapper">
@@ -241,6 +242,27 @@
 
     </div>
 		</div>
+	</div>
+
+	<script>
+		function filterTasks() {
+			var input, filter, gallery, items, title, i, txtValue;
+			input = document.getElementById('searchInput');
+			filter = input.value.toLowerCase();
+			gallery = document.getElementById("taskGallery");
+			items = gallery.getElementsByClassName('gallery-single');
+
+			for (i = 0; i < items.length; i++) {
+				title = items[i].getElementsByTagName("h4")[0];
+				txtValue = title.textContent || title.innerText;
+				if (txtValue.toLowerCase().indexOf(filter) > -1) {
+					items[i].parentElement.style.display = "";
+				} else {
+					items[i].parentElement.style.display = "none";
+				}
+			}
+		}
+	</script>
 
                 </div><!-- end title -->
                 <section class="projects m-3" id="projects" style=" padding-top: 100px; padding-bottom: 100px;">
@@ -328,7 +350,7 @@
             </div><!-- end title -->
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="contact_form">
                         <div id="message"></div>
                         <form id="contactForm" name="sentMessage" novalidate="novalidate">
@@ -368,6 +390,18 @@
                         <a href="https://www.linkedin.com/in/tegar-amru-4b4826280/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
                     </div>
                 </div><!-- end col -->
+
+                <div class="col-md-6">
+                    <h4></h4>
+                    <iframe 
+                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=unpam viktor&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
